@@ -16,7 +16,7 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       selectedItem : 2,
-      itemList: ['刘备', '张飞', '关羽', '赵云', '黄忠', '马超', '魏延', '诸葛亮']
+      itemList: ['Stoplight', '333', 'Alphabet', 'Colors', 'Countdown', 'Book Speed']
     }
   },
 
@@ -26,21 +26,21 @@ module.exports = React.createClass({
     })
   },
 
-  onAddItem: function() {
-    var name = '司马懿'
-    if (this.state.itemList.indexOf(name) == -1) {
-      this.state.itemList.push(name)
-    }
-    this.setState({
-      selectedItem: this.state.itemList.indexOf(name),
-    })
-  },
+  // onAddItem: function() {
+  //   var name = '司马懿'
+  //   if (this.state.itemList.indexOf(name) == -1) {
+  //     this.state.itemList.push(name)
+  //   }
+  //   this.setState({
+  //     selectedItem: this.state.itemList.indexOf(name),
+  //   })
+  // },
 
   render: function() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Choose your game!
         </Text>
         <Picker style={{width: 150, height: 180}}
           selectedValue={this.state.selectedItem}
@@ -51,14 +51,14 @@ module.exports = React.createClass({
             ))}
         </Picker>
         <Text style={{margin: 20, color: '#ffffff'}}>
-          你最喜欢的是：{this.state.itemList[this.state.selectedItem]}
-        </Text>
-
-        <Text style={{margin: 20, color: '#ffffff'}}
-            onPress={this.onAddItem}>
-          怎么没有司马懿？
+          Current Choice：{this.state.itemList[this.state.selectedItem]}
         </Text>
       </View>
+        // <Text style={{margin: 20, color: '#ffffff'}}
+        //     onPress={this.onAddItem}>
+        //   怎么没有司马懿？
+        // </Text>
+
     );
   }
 });

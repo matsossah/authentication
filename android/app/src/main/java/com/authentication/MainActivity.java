@@ -28,6 +28,13 @@ public class MainActivity extends ReactActivity {
     }
 
     @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new MainReactPackage(), new ReactNativeWheelPickerPackage()
+      );
+    }
+
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
@@ -81,3 +88,4 @@ public class MainActivity extends ReactActivity {
         );
     }
 }
+
